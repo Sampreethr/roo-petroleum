@@ -2,7 +2,7 @@
 
 import React, { forwardRef } from 'react';
 import { ButtonProps, ButtonRef } from '@/types';
-import { BRAND_COLORS, TRANSITIONS } from '@/lib/constants';
+import { BRAND_COLORS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 /**

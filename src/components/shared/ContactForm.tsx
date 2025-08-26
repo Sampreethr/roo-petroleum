@@ -255,7 +255,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                   {/* Submit Status Messages */}
                   {submitStatus === 'success' && (
                     <div className="p-4 bg-green-50 border border-green-200 rounded-md">
-                      <p className="text-green-800">Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+                      <p className="text-green-800">Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.</p>
                     </div>
                   )}
 

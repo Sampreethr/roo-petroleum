@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { HeaderProps } from '@/types';
-import { BRAND_COLORS, LAYOUT } from '@/lib/constants';
+import { LAYOUT } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Button from '@/components/shared/Button';
 
@@ -13,17 +13,9 @@ import Button from '@/components/shared/Button';
  * Features responsive design and smooth scrolling effects
  */
 const Header: React.FC<HeaderProps> = ({ navigation, showSignIn = true }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

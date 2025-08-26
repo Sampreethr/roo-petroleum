@@ -161,13 +161,13 @@ export default function AboutPage() {
               Our Journey
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Key milestones in our company's growth and evolution
+              Key milestones in our company&apos;s growth and evolution
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
-              {milestones.map((milestone, index) => (
+              {milestones.map((milestone) => (
                 <div key={milestone.year} className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-20 h-20 bg-[#F2601A] rounded-full flex items-center justify-center">
@@ -254,6 +254,6 @@ export default function AboutPage() {
 
 export const metadata = {
   title: 'About Us - Roo Petroleum | Reliable Fuel Solutions Since 1998',
-  description: 'Learn about Roo Petroleum\'s 25+ year history, mission, values, and leadership team. Discover why we\'re the trusted choice for petroleum solutions.',
+  description: 'Learn about Roo Petroleum&apos;s 25+ year history, mission, values, and leadership team. Discover why we&apos;re the trusted choice for petroleum solutions.',
   keywords: ['about roo petroleum', 'company history', 'petroleum industry experience', 'fuel solutions provider', 'energy company leadership']
 };

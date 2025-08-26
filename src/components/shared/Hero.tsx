@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { HeroProps } from '@/types';
-import { BRAND_COLORS, BRAND_MESSAGING } from '@/lib/constants';
+
 import { cn } from '@/lib/utils';
 import Button from './Button';
 
@@ -17,7 +17,6 @@ const Hero: React.FC<HeroProps> = ({
   description,
   primaryAction,
   secondaryAction,
-  backgroundImage,
   className,
 }) => {
   return (
@@ -65,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({
           {/* Trust Quotation */}
           <div className="mb-8 fade-in">
             <blockquote className="text-lg sm:text-xl font-light text-white/90 italic max-w-2xl mx-auto">
-              "Your trusted partner for reliable energy solutions."
+              &ldquo;Your trusted partner for reliable energy solutions.&rdquo;
             </blockquote>
           </div>
 

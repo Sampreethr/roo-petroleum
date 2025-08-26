@@ -5,7 +5,7 @@ import Card, { CardHeader, CardTitle, CardDescription, CardContent } from './Car
 import Button from './Button';
 import { WithClassName } from '@/types';
 import { cn } from '@/lib/utils';
-import { BRAND_MESSAGING } from '@/lib/constants';
+
 
 export interface Service {
   id: string;
@@ -139,7 +139,7 @@ const Services: React.FC<ServicesProps> = ({
         {showCTA && (
           <div className="text-center mt-12">
             <p className="text-lg text-gray-600 mb-6">
-              Need a custom solution? We're here to help.
+              Need a custom solution? We&apos;re here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="primary">

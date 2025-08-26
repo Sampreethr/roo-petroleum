@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import Services from '@/components/shared/Services';
+
 import Card, { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/shared/Card';
 import Button from '@/components/shared/Button';
 import { Service } from '@/components/shared/Services';

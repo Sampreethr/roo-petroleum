@@ -2,7 +2,7 @@
 
 import React, { forwardRef } from 'react';
 import { InputRef } from '@/types';
-import { BRAND_COLORS } from '@/lib/constants';
+
 import { cn } from '@/lib/utils';
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {

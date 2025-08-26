@@ -246,7 +246,7 @@ export default function ContactPage() {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Don't wait - contact our petroleum experts today and discover how we can 
+            Don&apos;t wait - contact our petroleum experts today and discover how we can 
             help optimize your fuel supply and operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -4,8 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FooterProps } from '@/types';
-import { BRAND_COLORS, BRAND_MESSAGING } from '@/lib/constants';
-import { cn } from '@/lib/utils';
+import { BRAND_MESSAGING } from '@/lib/constants';
 
 /**
  * Footer component with company information, navigation, and social links

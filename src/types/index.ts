@@ -127,7 +127,7 @@ export interface PageMetadata {
 }
 
 // API response types
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   error?: string;
@@ -152,11 +152,11 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type Spacing = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
 
 // Utility types
-export type WithClassName<T = {}> = T & {
+export type WithClassName<T = object> = T & {
   className?: string;
 };
 
-export type WithChildren<T = {}> = T & {
+export type WithChildren<T = object> = T & {
   children: React.ReactNode;
 };
 
