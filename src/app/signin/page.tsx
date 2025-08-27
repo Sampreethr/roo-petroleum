@@ -2,6 +2,7 @@ import Layout from '@/components/layout/Layout';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/shared/Card';
 import Button from '@/components/shared/Button';
 import Input from '@/components/shared/Input';
+import { BarChart3, CreditCard, Smartphone, TrendingUp, Bell, Target, CheckCircle } from 'lucide-react';
 
 export default function SignInPage() {
   return (
@@ -116,7 +117,9 @@ export default function SignInPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">📊</div>
+              <div className="mb-4 flex justify-center">
+                <BarChart3 className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-xl mb-3">Order Management</CardTitle>
               <CardDescription>
                 View order history, track current deliveries, and schedule future fuel deliveries with ease.
@@ -124,7 +127,9 @@ export default function SignInPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">💳</div>
+              <div className="mb-4 flex justify-center">
+                <CreditCard className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-xl mb-3">Billing & Invoices</CardTitle>
               <CardDescription>
                 Access invoices, view payment history, and manage billing preferences in one convenient location.
@@ -132,7 +137,9 @@ export default function SignInPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">📱</div>
+              <div className="mb-4 flex justify-center">
+                <Smartphone className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-xl mb-3">Mobile Access</CardTitle>
               <CardDescription>
                 Access your account from any device with our mobile-responsive customer portal.
@@ -140,7 +147,9 @@ export default function SignInPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">📈</div>
+              <div className="mb-4 flex justify-center">
+                <TrendingUp className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-xl mb-3">Usage Analytics</CardTitle>
               <CardDescription>
                 Monitor fuel consumption patterns and optimize your usage with detailed analytics and reports.
@@ -148,7 +157,9 @@ export default function SignInPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">🔔</div>
+              <div className="mb-4 flex justify-center">
+                <Bell className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-xl mb-3">Notifications</CardTitle>
               <CardDescription>
                 Receive real-time updates on deliveries, account changes, and important service announcements.
@@ -156,7 +167,9 @@ export default function SignInPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="mb-4 flex justify-center">
+                <Target className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-xl mb-3">Priority Support</CardTitle>
               <CardDescription>
                 Get priority customer support and direct access to your dedicated account manager.
@@ -181,19 +194,19 @@ export default function SignInPage() {
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
-                    <span className="text-[#F2601A] mr-2 mt-1">•</span>
+                    <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-600">Instant access to online ordering and tracking</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#F2601A] mr-2 mt-1">•</span>
+                    <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-600">Dedicated account manager for personalized service</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#F2601A] mr-2 mt-1">•</span>
+                    <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-600">Competitive pricing and volume discounts</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#F2601A] mr-2 mt-1">•</span>
+                    <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-600">24/7 emergency fuel delivery service</span>
                   </li>
                 </ul>

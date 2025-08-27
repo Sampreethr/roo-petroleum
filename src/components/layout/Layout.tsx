@@ -26,15 +26,15 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
     description: 'Your trusted partner for quality petroleum products and exceptional service.',
     address: {
       street: '123 Energy Boulevard',
-      city: 'Houston',
-      state: 'TX',
-      zipCode: '77001',
-      country: 'United States',
+      city: 'Sydney',
+      state: 'NSW',
+      zipCode: '2000',
+      country: 'Australia',
     },
     contact: {
-      phone: '+1 (555) 123-4567',
-      email: 'info@roopetroleum.com',
-      website: 'https://roopetroleum.com',
+      phone: '+61 2 8765 4321',
+      email: 'office@roopetroleum.com.au',
+      website: 'https://roopetroleum.com.au',
     },
   };
 
@@ -42,17 +42,17 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   const socialLinks: SocialLink[] = [
     {
       platform: 'LinkedIn',
-      url: 'https://linkedin.com/company/roopetroleum',
+      url: 'https://linkedin.com/company/roopetroleum-au',
       icon: 'linkedin',
     },
     {
       platform: 'Twitter',
-      url: 'https://twitter.com/roopetroleum',
+      url: 'https://twitter.com/roopetroleum_au',
       icon: 'twitter',
     },
     {
       platform: 'Facebook',
-      url: 'https://facebook.com/roopetroleum',
+      url: 'https://facebook.com/roopetroleum.au',
       icon: 'facebook',
     },
   ];

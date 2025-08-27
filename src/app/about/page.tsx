@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shared/Card';
 import { BRAND_MESSAGING } from '@/lib/constants';
+import { Shield, Leaf, Target, User, Handshake } from 'lucide-react';
 
 export default function AboutPage() {
   const teamMembers = [
@@ -33,7 +34,7 @@ export default function AboutPage() {
     {
       year: '2005',
       title: 'Regional Expansion',
-      description: 'Expanded operations to serve customers across multiple states.'
+      description: 'Expanded operations to serve customers across multiple Australian states.'
     },
     {
       year: '2012',
@@ -55,8 +56,19 @@ export default function AboutPage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#003666] to-[#004080] text-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative text-white py-20 overflow-hidden">
+        {/* Background Image with Blur */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
+          style={{
+            backgroundImage: 'url(/about.png)',
+          }}
+        />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               About Roo Petroleum
@@ -65,8 +77,8 @@ export default function AboutPage() {
               {BRAND_MESSAGING.tagline}
             </p>
             <p className="text-lg opacity-80 max-w-3xl mx-auto">
-              For over 25 years, Roo Petroleum has been a trusted partner in the energy industry, 
-              providing reliable fuel solutions and exceptional service to businesses nationwide.
+              For over 25 years, Roo Petroleum has been a trusted partner in the energy industry,
+        providing reliable fuel solutions and exceptional service to businesses across Australia.
             </p>
           </div>
         </div>
@@ -119,7 +131,9 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">🛡️</div>
+              <div className="mb-4 flex justify-center">
+                <Shield className="w-12 h-12 text-blue-600" />
+              </div>
               <CardTitle className="text-lg mb-3">Reliability</CardTitle>
               <CardDescription>
                 Consistent, dependable service you can count on, every time.
@@ -127,7 +141,9 @@ export default function AboutPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">🌱</div>
+              <div className="mb-4 flex justify-center">
+                <Leaf className="w-12 h-12 text-green-600" />
+              </div>
               <CardTitle className="text-lg mb-3">Sustainability</CardTitle>
               <CardDescription>
                 Committed to environmental stewardship and sustainable practices.
@@ -135,7 +151,9 @@ export default function AboutPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="mb-4 flex justify-center">
+                <Target className="w-12 h-12 text-red-600" />
+              </div>
               <CardTitle className="text-lg mb-3">Excellence</CardTitle>
               <CardDescription>
                 Striving for the highest quality in products and services.
@@ -143,7 +161,9 @@ export default function AboutPage() {
             </Card>
 
             <Card variant="default" padding="lg" className="text-center">
-              <div className="text-4xl mb-4">🤝</div>
+              <div className="mb-4 flex justify-center">
+                <Handshake className="w-12 h-12 text-orange-600" />
+              </div>
               <CardTitle className="text-lg mb-3">Integrity</CardTitle>
               <CardDescription>
                 Honest, transparent business practices built on trust.
@@ -205,7 +225,7 @@ export default function AboutPage() {
             {teamMembers.map((member, index) => (
               <Card key={index} variant="elevated" padding="lg" className="text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl text-gray-500">👤</span>
+                  <User className="w-8 h-8 text-gray-500" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl">{member.name}</CardTitle>

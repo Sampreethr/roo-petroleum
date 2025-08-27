@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from './Card';
 import Button from './Button';
 import { WithClassName } from '@/types';
 import { cn } from '@/lib/utils';
+import { Fuel, Factory, BarChart3, Wrench, CheckCircle } from 'lucide-react';
 
 
 export interface Service {
@@ -12,7 +13,7 @@ export interface Service {
   title: string;
   description: string;
   features: string[];
-  icon?: string;
+  icon?: string | ReactNode;
   image?: string;
 }
 
@@ -35,7 +36,7 @@ const defaultServices: Service[] = [
       'Fleet management solutions',
       'Competitive pricing'
     ],
-    icon: '⛽'
+    icon: <Fuel className="w-8 h-8 text-blue-600" />
   },
   {
     id: 'storage-solutions',
@@ -47,7 +48,7 @@ const defaultServices: Service[] = [
       'Safety compliance',
       'Environmental monitoring'
     ],
-    icon: '🏭'
+    icon: <Factory className="w-8 h-8 text-blue-600" />
   },
   {
     id: 'consulting',
@@ -59,7 +60,7 @@ const defaultServices: Service[] = [
       'Sustainability planning',
       'Regulatory compliance'
     ],
-    icon: '📊'
+    icon: <BarChart3 className="w-8 h-8 text-blue-600" />
   },
   {
     id: 'maintenance',
@@ -71,7 +72,7 @@ const defaultServices: Service[] = [
       'Equipment upgrades',
       'Technical support'
     ],
-    icon: '🔧'
+    icon: <Wrench className="w-8 h-8 text-blue-600" />
   }
 ];
 
@@ -115,7 +116,7 @@ const Services: React.FC<ServicesProps> = ({
             >
               <CardHeader>
                 {service.icon && (
-                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <div className="text-4xl mb-4 flex justify-center">{service.icon}</div>
                 )}
                 <CardTitle>{service.title}</CardTitle>
                 <CardDescription>{service.description}</CardDescription>
@@ -125,7 +126,7 @@ const Services: React.FC<ServicesProps> = ({
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-start text-sm text-gray-600">
-                      <span className="text-[#F2601A] mr-2 mt-1">•</span>
+                      <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -166,7 +167,13 @@ export const ServiceCard: React.FC<{ service: Service; className?: string }> = (
   <Card variant="elevated" hover className={cn('h-full', className)}>
     <CardHeader>
       {service.icon && (
-        <div className="text-4xl mb-4">{service.icon}</div>
+        <div className="mb-4 flex justify-center">
+          {typeof service.icon === 'string' ? (
+            <div className="text-4xl">{service.icon}</div>
+          ) : (
+            service.icon
+          )}
+        </div>
       )}
       <CardTitle>{service.title}</CardTitle>
       <CardDescription>{service.description}</CardDescription>
@@ -176,7 +183,7 @@ export const ServiceCard: React.FC<{ service: Service; className?: string }> = (
       <ul className="space-y-2">
         {service.features.map((feature, index) => (
           <li key={index} className="flex items-start text-sm text-gray-600">
-            <span className="text-[#F2601A] mr-2 mt-1">•</span>
+            <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
             {feature}
           </li>
         ))}

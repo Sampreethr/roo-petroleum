@@ -2,7 +2,6 @@
 
 import React, { forwardRef } from 'react';
 import { ButtonProps, ButtonRef } from '@/types';
-import { BRAND_COLORS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 /**
@@ -33,27 +32,27 @@ const Button = forwardRef<ButtonRef, ButtonProps>((
 
   const variantStyles = {
     primary: `
-      bg-[${BRAND_COLORS.primary.orange}] text-white
-      hover:bg-[${BRAND_COLORS.secondary.darkOrange}]
-      focus:ring-[${BRAND_COLORS.primary.orange}]
+      bg-[#F2601A] text-white
+      hover:bg-[#D4501A]
+      focus:ring-[#F2601A]
       shadow-md hover:shadow-lg
     `,
     secondary: `
-      bg-[${BRAND_COLORS.primary.navy}] text-white
-      hover:bg-[${BRAND_COLORS.secondary.darkNavy}]
-      focus:ring-[${BRAND_COLORS.primary.navy}]
+      bg-[#003666] text-white
+      hover:bg-[#002244]
+      focus:ring-[#003666]
       shadow-md hover:shadow-lg
     `,
     outline: `
-      border-2 border-[${BRAND_COLORS.primary.orange}] text-[${BRAND_COLORS.primary.orange}]
-      hover:bg-[${BRAND_COLORS.primary.orange}] hover:text-white
-      focus:ring-[${BRAND_COLORS.primary.orange}]
+      border-2 border-[#F2601A] text-[#F2601A]
+      hover:bg-[#F2601A] hover:text-white
+      focus:ring-[#F2601A]
       bg-transparent
     `,
     ghost: `
-      text-[${BRAND_COLORS.primary.navy}] bg-transparent
-      hover:bg-[${BRAND_COLORS.neutral.gray100}]
-      focus:ring-[${BRAND_COLORS.neutral.gray300}]
+      text-[#003666] bg-transparent
+      hover:bg-[#F8F9FA]
+      focus:ring-[#DEE2E6]
     `,
   };
 

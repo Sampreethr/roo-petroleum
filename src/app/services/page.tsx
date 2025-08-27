@@ -1,8 +1,10 @@
 import Layout from '@/components/layout/Layout';
-
+import Link from 'next/link';
+import Image from 'next/image';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/shared/Card';
 import Button from '@/components/shared/Button';
 import { Service } from '@/components/shared/Services';
+import { Fuel, Factory, BarChart3, Wrench, Truck, Globe, Construction, Truck as TruckIcon, Building2, Tractor, Anchor, Plane, CheckCircle } from 'lucide-react';
 
 export default function ServicesPage() {
   const detailedServices: Service[] = [
@@ -18,7 +20,7 @@ export default function ServicesPage() {
         'Real-time delivery tracking and notifications',
         'Quality assurance and fuel testing'
       ],
-      icon: '⛽'
+      icon: <Fuel className="w-8 h-8" />
     },
     {
       id: 'storage-solutions',
@@ -32,7 +34,7 @@ export default function ServicesPage() {
         'Leak detection and prevention systems',
         'Tank cleaning and decommissioning'
       ],
-      icon: '🏭'
+      icon: <Factory className="w-8 h-8" />
     },
     {
       id: 'consulting',
@@ -46,7 +48,7 @@ export default function ServicesPage() {
         'Energy efficiency recommendations',
         'Alternative fuel solutions consulting'
       ],
-      icon: '📊'
+      icon: <BarChart3 className="w-8 h-8" />
     },
     {
       id: 'maintenance',
@@ -60,7 +62,7 @@ export default function ServicesPage() {
         'Certified technician services',
         'Warranty and service agreements'
       ],
-      icon: '🔧'
+      icon: <Wrench className="w-8 h-8" />
     },
     {
       id: 'logistics',
@@ -74,7 +76,7 @@ export default function ServicesPage() {
         'Insurance and safety compliance',
         'Cross-docking and distribution services'
       ],
-      icon: '🚛'
+      icon: <Truck className="w-8 h-8" />
     },
     {
       id: 'environmental',
@@ -88,7 +90,7 @@ export default function ServicesPage() {
         'Environmental impact assessments',
         'Sustainability program development'
       ],
-      icon: '🌍'
+      icon: <Globe className="w-8 h-8" />
     }
   ];
 
@@ -96,40 +98,54 @@ export default function ServicesPage() {
     {
       name: 'Construction',
       description: 'Reliable fuel supply for construction equipment and job sites.',
-      icon: '🏗️'
+      icon: <Construction className="w-8 h-8" />
     },
     {
       name: 'Transportation',
       description: 'Fleet fueling solutions for trucking and logistics companies.',
-      icon: '🚚'
+      icon: <TruckIcon className="w-8 h-8" />
     },
     {
       name: 'Manufacturing',
       description: 'Industrial fuel solutions for manufacturing operations.',
-      icon: '🏭'
+      icon: <Building2 className="w-8 h-8" />
     },
     {
       name: 'Agriculture',
       description: 'Farm and agricultural equipment fueling services.',
-      icon: '🚜'
+      icon: <Tractor className="w-8 h-8" />
     },
     {
       name: 'Marine',
       description: 'Marine fuel supply for ports and waterway operations.',
-      icon: '⚓'
+      icon: <Anchor className="w-8 h-8" />
     },
     {
       name: 'Aviation',
       description: 'Aviation fuel services for airports and aircraft operators.',
-      icon: '✈️'
+      icon: <Plane className="w-8 h-8" />
     }
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#003666] to-[#004080] text-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative min-h-[60vh] flex items-center justify-center text-white overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/services.png"
+            alt="Services background"
+            fill
+            className="object-cover blur-sm"
+            priority
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Our Services
@@ -161,8 +177,8 @@ export default function ServicesPage() {
             {detailedServices.map((service) => (
               <Card key={service.id} variant="elevated" padding="lg" className="h-full">
                 <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="text-4xl">{service.icon}</div>
+                  <div className="text-center mb-4">
+                    <div className="text-4xl mb-4 flex justify-center">{service.icon}</div>
                     <CardTitle className="text-2xl">{service.title}</CardTitle>
                   </div>
                   <CardDescription className="text-base">
@@ -175,7 +191,7 @@ export default function ServicesPage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start text-sm text-gray-600">
-                        <span className="text-[#F2601A] mr-2 mt-1">•</span>
+                        <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -183,9 +199,11 @@ export default function ServicesPage() {
                 </CardContent>
                 
                 <CardFooter>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Learn More
-                  </Button>
+                  <Link href={`/services/${service.id}`}>
+                    <Button variant="outline" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             ))}
@@ -299,6 +317,6 @@ export default function ServicesPage() {
 
 export const metadata = {
   title: 'Services - Roo Petroleum | Comprehensive Petroleum Solutions',
-  description: 'Explore Roo Petroleum\'s complete range of services including fuel supply, storage solutions, consulting, maintenance, and more. Serving multiple industries nationwide.',
+  description: 'Explore Roo Petroleum\'s complete range of services including fuel supply, storage solutions, consulting, maintenance, and more. Serving multiple industries across Australia.',
   keywords: ['petroleum services', 'fuel supply', 'storage solutions', 'energy consulting', 'equipment maintenance', 'logistics', 'environmental services']
 };

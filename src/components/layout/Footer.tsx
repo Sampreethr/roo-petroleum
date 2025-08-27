@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FooterProps } from '@/types';
 import { BRAND_MESSAGING } from '@/lib/constants';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 /**
  * Footer component with company information, navigation, and social links
@@ -43,22 +44,15 @@ const Footer: React.FC<FooterProps> = ({ companyInfo, navigation, socialLinks })
             {/* Contact Information */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-[#F2601A]" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
+                <Mail className="w-4 h-4 text-[#F2601A]" />
                 <span className="text-gray-300">{companyInfo.contact.email}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-[#F2601A]" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
+                <Phone className="w-4 h-4 text-[#F2601A]" />
                 <span className="text-gray-300">{companyInfo.contact.phone}</span>
               </div>
               <div className="flex items-start space-x-2">
-                <svg className="w-4 h-4 text-[#F2601A] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
+                <MapPin className="w-4 h-4 text-[#F2601A] mt-0.5" />
                 <div className="text-gray-300">
                   <div>{companyInfo.address.street}</div>
                   <div>
@@ -133,21 +127,36 @@ const Footer: React.FC<FooterProps> = ({ companyInfo, navigation, socialLinks })
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               <span className="text-gray-300 text-sm">Follow us:</span>
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.platform}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-[#F2601A] transition-colors duration-200"
-                  aria-label={`Follow us on ${social.platform}`}
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    {/* Generic social icon - replace with specific icons */}
-                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" />
-                  </svg>
-                </Link>
-              ))}
+              {socialLinks.map((social) => {
+                const getSocialIcon = (platform: string) => {
+                  const iconProps = { className: "w-5 h-5" };
+                  switch (platform.toLowerCase()) {
+                    case 'facebook':
+                      return <Facebook {...iconProps} />;
+                    case 'twitter':
+                      return <Twitter {...iconProps} />;
+                    case 'linkedin':
+                      return <Linkedin {...iconProps} />;
+                    case 'instagram':
+                      return <Instagram {...iconProps} />;
+                    default:
+                      return <div className="w-5 h-5 rounded-full border border-current" />;
+                  }
+                };
+                
+                return (
+                  <Link
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-[#F2601A] transition-colors duration-200"
+                    aria-label={`Follow us on ${social.platform}`}
+                  >
+                    {getSocialIcon(social.platform)}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Newsletter Signup */}

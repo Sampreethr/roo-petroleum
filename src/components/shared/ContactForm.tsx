@@ -291,31 +291,31 @@ const ContactForm: React.FC<ContactFormProps> = ({
                       <h4 className="font-semibold text-[#003666] mb-2">Address</h4>
                       <p className="text-gray-600 text-sm">
                         123 Petroleum Drive<br />
-                        Houston, TX 77001<br />
-                        United States
+                        Sydney, NSW 2000<br />
+                        Australia
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#003666] mb-2">Phone</h4>
                       <p className="text-gray-600 text-sm">
-                        <a href="tel:+1-555-123-4567" className="hover:text-[#F2601A]">
-                          +1 (555) 123-4567
+                        <a href="tel:+61-2-8765-4321" className="hover:text-[#F2601A]">
+                          +61 2 8765 4321
                         </a>
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#003666] mb-2">Email</h4>
                       <p className="text-gray-600 text-sm">
-                        <a href="mailto:info@roopetroleum.com" className="hover:text-[#F2601A]">
-                          info@roopetroleum.com
+                        <a href="mailto:office@roopetroleum.com.au" className="hover:text-[#F2601A]">
+                          office@roopetroleum.com.au
                         </a>
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#003666] mb-2">Business Hours</h4>
                       <p className="text-gray-600 text-sm">
-                        Monday - Friday: 8:00 AM - 6:00 PM<br />
-                        Saturday: 9:00 AM - 4:00 PM<br />
+                        Monday - Friday: 8:00 AM - 6:00 PM AEST<br />
+                        Saturday: 9:00 AM - 4:00 PM AEST<br />
                         Sunday: Emergency only
                       </p>
                     </div>
@@ -331,8 +331,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
                       For urgent fuel supply needs or emergencies:
                     </p>
                     <p className="font-semibold text-[#F2601A]">
-                      <a href="tel:+1-555-EMERGENCY" className="hover:underline">
-                        +1 (555) EMERGENCY
+                      <a href="tel:+61-1800-766-3835" className="hover:underline">
+                        +61 1800 ROO FUEL
                       </a>
                     </p>
                     <p className="text-xs text-gray-500 mt-2">

@@ -1,56 +1,57 @@
 import Layout from '@/components/layout/Layout';
 import ContactForm from '@/components/shared/ContactForm';
 import Card, { CardHeader, CardTitle, CardContent } from '@/components/shared/Card';
+import { Phone, Mail, AlertTriangle, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
   const contactMethods = [
     {
       title: 'Phone',
-      icon: '📞',
-      primary: '+1 (555) 123-4567',
-      secondary: 'Monday - Friday: 8:00 AM - 6:00 PM',
-      action: 'tel:+1-555-123-4567'
+      icon: <Phone className="w-6 h-6" />,
+      primary: '+61 2 8765 4321',
+      secondary: 'Monday - Friday: 8:00 AM - 6:00 PM AEST',
+      action: 'tel:+61-2-8765-4321'
     },
     {
       title: 'Email',
-      icon: '✉️',
-      primary: 'info@roopetroleum.com',
+      icon: <Mail className="w-6 h-6" />,
+      primary: 'office@roopetroleum.com.au',
       secondary: 'We respond within 24 hours',
-      action: 'mailto:info@roopetroleum.com'
+      action: 'mailto:office@roopetroleum.com.au'
     },
     {
       title: 'Emergency',
-      icon: '🚨',
-      primary: '+1 (555) EMERGENCY',
+      icon: <AlertTriangle className="w-6 h-6" />,
+      primary: '+61 1800 ROO FUEL',
       secondary: '24/7 for existing customers',
-      action: 'tel:+1-555-362-7436'
+      action: 'tel:+61-1800-766-3835'
     }
   ];
 
   const offices = [
     {
-      name: 'Headquarters',
+      name: 'Head Office',
       address: '123 Petroleum Drive',
-      city: 'Houston, TX 77001',
-      phone: '+1 (555) 123-4567',
-      email: 'houston@roopetroleum.com',
-      hours: 'Mon-Fri: 8:00 AM - 6:00 PM'
+      city: 'Sydney, NSW 2000',
+      phone: '+61 2 8765 4321',
+      email: 'sydney@roopetroleum.com.au',
+      hours: 'Mon-Fri: 8:00 AM - 6:00 PM AEST'
     },
     {
       name: 'Regional Office',
       address: '456 Energy Boulevard',
-      city: 'Dallas, TX 75201',
-      phone: '+1 (555) 234-5678',
-      email: 'dallas@roopetroleum.com',
-      hours: 'Mon-Fri: 8:00 AM - 5:00 PM'
+      city: 'Melbourne, VIC 3000',
+      phone: '+61 3 9876 5432',
+      email: 'melbourne@roopetroleum.com.au',
+      hours: 'Mon-Fri: 8:00 AM - 5:00 PM AEST'
     },
     {
-      name: 'Distribution Center',
+      name: 'Distribution Centre',
       address: '789 Industrial Parkway',
-      city: 'Austin, TX 78701',
-      phone: '+1 (555) 345-6789',
-      email: 'austin@roopetroleum.com',
-      hours: 'Mon-Sat: 7:00 AM - 7:00 PM'
+      city: 'Brisbane, QLD 4000',
+      phone: '+61 7 3456 7890',
+      email: 'brisbane@roopetroleum.com.au',
+      hours: 'Mon-Sat: 7:00 AM - 7:00 PM AEST'
     }
   ];
 
@@ -65,7 +66,7 @@ export default function ContactPage() {
     },
     {
       question: 'What areas do you serve?',
-      answer: 'We serve customers across Texas and surrounding states. Contact us to confirm service availability in your specific location.'
+      answer: 'We serve customers across Australia including all major cities and regional areas. Contact us to confirm service availability in your specific location.'
     },
     {
       question: 'How do I request a quote?',
@@ -141,7 +142,7 @@ export default function ContactPage() {
               Our Locations
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Visit us at one of our convenient locations across Texas
+              Visit us at one of our convenient locations across Australia
             </p>
           </div>
 
@@ -228,7 +229,9 @@ export default function ContactPage() {
           <Card variant="elevated" padding="none" className="max-w-4xl mx-auto">
             <div className="h-96 bg-gray-200 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-6xl mb-4">🗺️</div>
+                <div className="mb-4 flex justify-center">
+                  <MapPin className="w-16 h-16 text-gray-400" />
+                </div>
                 <p className="text-gray-600">
                   Interactive map coming soon<br />
                   <span className="text-sm">Contact us for directions to our locations</span>
@@ -271,6 +274,6 @@ export default function ContactPage() {
 
 export const metadata = {
   title: 'Contact Us - Roo Petroleum | Get Your Fuel Quote Today',
-  description: 'Contact Roo Petroleum for reliable fuel solutions. Call (555) 123-4567, email info@roopetroleum.com, or visit our Texas locations. 24/7 emergency service available.',
-  keywords: ['contact roo petroleum', 'fuel quote', 'petroleum services contact', 'emergency fuel delivery', 'texas fuel supplier']
+  description: 'Contact Roo Petroleum for reliable fuel solutions. Call +61 2 8765 4321, email office@roopetroleum.com.au, or visit our Australian locations. 24/7 emergency service available.',
+  keywords: ['contact roo petroleum', 'fuel quote', 'petroleum services contact', 'emergency fuel delivery', 'australian fuel supplier']
 };

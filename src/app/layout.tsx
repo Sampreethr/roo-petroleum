@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   publisher: BRAND_MESSAGING.companyName,
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_AU",
     url: "https://roopetroleum.com",
     title: BRAND_MESSAGING.companyName,
     description: BRAND_MESSAGING.description,

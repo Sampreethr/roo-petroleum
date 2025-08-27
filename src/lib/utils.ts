@@ -93,8 +93,8 @@ export function capitalize(str: string): string {
 /**
  * Format currency values
  */
-export function formatCurrency(amount: number, currency: string = 'USD'): string {
-  return new Intl.NumberFormat('en-US', {
+export function formatCurrency(amount: number, currency: string = 'AUD'): string {
+  return new Intl.NumberFormat('en-AU', {
     style: 'currency',
     currency,
   }).format(amount);
