@@ -2,7 +2,7 @@ import Layout from '@/components/layout/Layout';
 import Image from 'next/image';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shared/Card';
 import Button from '@/components/shared/Button';
-import { Wrench, Clock, Shield, Phone, CheckCircle, AlertTriangle, Calendar, Settings, Users, ArrowLeft } from 'lucide-react';
+import { Wrench, Clock, Shield, Phone, CheckCircle, AlertTriangle, Calendar, Settings, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export default function MaintenancePage() {

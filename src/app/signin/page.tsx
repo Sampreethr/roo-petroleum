@@ -189,7 +189,7 @@ export default function SignInPage() {
                   New Customer?
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Be among the first to experience Roo Petroleum's innovative fuel solutions. 
+                  Be among the first to experience Roo Petroleum&apos;s innovative fuel solutions. 
                   Setting up your account is quick and easy.
                 </p>
                 <ul className="space-y-3 mb-8">
