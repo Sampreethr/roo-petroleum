@@ -161,7 +161,7 @@ export default function EnvironmentalPage() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center mb-6">
-              <Leaf className="w-12 h-12 mr-4 text-[#F2601A]" />
+              <Leaf className="w-12 h-12 mr-4 text-[#003666]" />
               <h1 className="text-4xl md:text-5xl font-bold">
                 Environmental Services
               </h1>
@@ -235,7 +235,7 @@ export default function EnvironmentalPage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2" />
+                        <CheckCircle className="w-4 h-4 text-[#003666] mr-2" />
                         {feature}
                       </li>
                     ))}

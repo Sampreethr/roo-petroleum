@@ -20,7 +20,7 @@ export default function ServicesPage() {
         'Real-time delivery tracking and notifications',
         'Quality assurance and fuel testing'
       ],
-      icon: <Fuel className="w-8 h-8" />
+      icon: <Fuel className="w-12 h-12 text-[#003666] mb-4" />
     },
     {
       id: 'storage-solutions',
@@ -34,7 +34,7 @@ export default function ServicesPage() {
         'Leak detection and prevention systems',
         'Tank cleaning and decommissioning'
       ],
-      icon: <Factory className="w-8 h-8" />
+      icon: <Factory className="w-12 h-12 text-[#003666] mb-4" />
     },
     {
       id: 'consulting',
@@ -48,7 +48,7 @@ export default function ServicesPage() {
         'Energy efficiency recommendations',
         'Alternative fuel solutions consulting'
       ],
-      icon: <BarChart3 className="w-8 h-8" />
+      icon: <BarChart3 className="w-12 h-12 text-[#003666] mb-4" />
     },
     {
       id: 'maintenance',
@@ -62,7 +62,7 @@ export default function ServicesPage() {
         'Certified technician services',
         'Warranty and service agreements'
       ],
-      icon: <Wrench className="w-8 h-8" />
+      icon: <Wrench className="w-12 h-12 text-[#003666] mb-4" />
     },
     {
       id: 'logistics',
@@ -76,7 +76,7 @@ export default function ServicesPage() {
         'Insurance and safety compliance',
         'Cross-docking and distribution services'
       ],
-      icon: <Truck className="w-8 h-8" />
+      icon: <Truck className="w-12 h-12 text-[#003666] mb-4" />
     },
     {
       id: 'environmental',
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         'Environmental impact assessments',
         'Sustainability program development'
       ],
-      icon: <Globe className="w-8 h-8" />
+      icon: <Globe className="w-12 h-12 text-[#003666] mb-4" />
     }
   ];
 
@@ -98,32 +98,32 @@ export default function ServicesPage() {
     {
       name: 'Construction',
       description: 'Reliable fuel supply for construction equipment and job sites.',
-      icon: <Construction className="w-8 h-8" />
+      icon: <Construction className="w-8 h-8 text-[#003666]" />
     },
     {
       name: 'Transportation',
       description: 'Fleet fueling solutions for trucking and logistics companies.',
-      icon: <TruckIcon className="w-8 h-8" />
+      icon: <TruckIcon className="w-8 h-8 text-[#003666]" />
     },
     {
       name: 'Manufacturing',
       description: 'Industrial fuel solutions for manufacturing operations.',
-      icon: <Building2 className="w-8 h-8" />
+      icon: <Building2 className="w-8 h-8 text-[#003666]" />
     },
     {
       name: 'Agriculture',
       description: 'Farm and agricultural equipment fueling services.',
-      icon: <Tractor className="w-8 h-8" />
+      icon: <Tractor className="w-8 h-8 text-[#003666]" />
     },
     {
       name: 'Marine',
       description: 'Marine fuel supply for ports and waterway operations.',
-      icon: <Anchor className="w-8 h-8" />
+      icon: <Anchor className="w-8 h-8 text-[#003666]" />
     },
     {
       name: 'Aviation',
       description: 'Aviation fuel services for airports and aircraft operators.',
-      icon: <Plane className="w-8 h-8" />
+      icon: <Plane className="w-8 h-8 text-[#003666]" />
     }
   ];
 

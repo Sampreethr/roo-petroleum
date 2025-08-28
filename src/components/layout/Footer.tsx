@@ -44,15 +44,15 @@ const Footer: React.FC<FooterProps> = ({ companyInfo, navigation, socialLinks })
             {/* Contact Information */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#F2601A]" />
+                <Mail className="w-4 h-4 text-[#003666]" />
                 <span className="text-gray-300">{companyInfo.contact.email}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#F2601A]" />
+                <Phone className="w-4 h-4 text-[#003666]" />
                 <span className="text-gray-300">{companyInfo.contact.phone}</span>
               </div>
               <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-[#F2601A] mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#003666] mt-0.5" />
                 <div className="text-gray-300">
                   <div>{companyInfo.address.street}</div>
                   <div>

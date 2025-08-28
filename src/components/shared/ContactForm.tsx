@@ -290,24 +290,24 @@ const ContactForm: React.FC<ContactFormProps> = ({
                     <div>
                       <h4 className="font-semibold text-[#003666] mb-2">Address</h4>
                       <p className="text-gray-600 text-sm">
-                        123 Petroleum Drive<br />
-                        Sydney, NSW 2000<br />
+                        Unit 41/2 Fastline Rd<br />
+                        Truganina VIC 3029<br />
                         Australia
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#003666] mb-2">Phone</h4>
                       <p className="text-gray-600 text-sm">
-                        <a href="tel:+61-2-8765-4321" className="hover:text-[#F2601A]">
-                          +61 2 8765 4321
+                        <a href="tel:+61-3-9876-5432" className="hover:text-[#F2601A]">
+                          +61 3 9876 5432
                         </a>
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#003666] mb-2">Email</h4>
                       <p className="text-gray-600 text-sm">
-                        <a href="mailto:office@roopetroleum.com.au" className="hover:text-[#F2601A]">
-                          office@roopetroleum.com.au
+                        <a href="mailto:melbourne@roopetroleum.com.au" className="hover:text-[#F2601A]">
+                          melbourne@roopetroleum.com.au
                         </a>
                       </p>
                     </div>
@@ -336,7 +336,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                       </a>
                     </p>
                     <p className="text-xs text-gray-500 mt-2">
-                      Available 24/7 for existing customers
+                      Available 24/7 emergency support
                     </p>
                   </CardContent>
                 </Card>

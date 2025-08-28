@@ -1,4 +1,5 @@
 import Layout from '@/components/layout/Layout';
+import Image from 'next/image';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shared/Card';
 import { BRAND_MESSAGING } from '@/lib/constants';
 import { Shield, Leaf, Target, User, Handshake } from 'lucide-react';
@@ -8,64 +9,67 @@ export default function AboutPage() {
     {
       name: 'John Smith',
       position: 'Chief Executive Officer',
-      experience: '25+ years in petroleum industry',
+      experience: 'MBA in Business Administration',
       description: 'Leading Roo Petroleum with vision and expertise in energy solutions.'
     },
     {
       name: 'Sarah Johnson',
       position: 'Operations Director',
-      experience: '20+ years in logistics',
+      experience: 'Certified Logistics Professional',
       description: 'Ensuring seamless operations and timely delivery across all services.'
     },
     {
       name: 'Michael Chen',
       position: 'Technical Manager',
-      experience: '15+ years in engineering',
+      experience: 'Licensed Professional Engineer',
       description: 'Overseeing technical operations and safety compliance standards.'
     }
   ];
 
   const milestones = [
     {
-      year: '1998',
-      title: 'Company Founded',
+      year: '2024',
+      title: 'Company Establishment',
       description: 'Roo Petroleum was established with a vision to provide reliable fuel solutions.'
     },
     {
-      year: '2005',
-      title: 'Regional Expansion',
-      description: 'Expanded operations to serve customers across multiple Australian states.'
+      year: 'Q2',
+      title: 'Infrastructure Setup',
+      description: 'Building state-of-the-art facilities and establishing supply chain partnerships.'
     },
     {
-      year: '2012',
+      year: 'Q3',
       title: 'Technology Integration',
-      description: 'Implemented advanced logistics and inventory management systems.'
+      description: 'Implementing advanced logistics and inventory management systems.'
     },
     {
-      year: '2018',
-      title: 'Sustainability Initiative',
-      description: 'Launched environmental sustainability programs and green energy solutions.'
+      year: 'Q4',
+      title: 'Service Launch',
+      description: 'Launching comprehensive fuel solutions and customer service operations.'
     },
     {
-      year: '2023',
-      title: 'Digital Transformation',
-      description: 'Modernized operations with digital platforms and enhanced customer experience.'
+      year: '2025',
+      title: 'Market Expansion',
+      description: 'Expanding operations to serve clients across multiple Australian regions.'
     }
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative text-white py-20 overflow-hidden">
-        {/* Background Image with Blur */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
-          style={{
-            backgroundImage: 'url(/about.png)',
-          }}
-        />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+      <section className="relative min-h-[60vh] flex items-center justify-center text-white overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/about.png"
+            alt="About Roo Petroleum background"
+            fill
+            className="object-cover blur-[1px]"
+            priority
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
@@ -77,8 +81,8 @@ export default function AboutPage() {
               {BRAND_MESSAGING.tagline}
             </p>
             <p className="text-lg opacity-80 max-w-3xl mx-auto">
-              For over 25 years, Roo Petroleum has been a trusted partner in the energy industry,
-        providing reliable fuel solutions and exceptional service to businesses across Australia.
+              Roo Petroleum is committed to becoming a trusted partner in the energy industry,
+              providing reliable fuel solutions and exceptional service to businesses across Australia.
             </p>
           </div>
         </div>
@@ -132,7 +136,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Shield className="w-12 h-12 text-blue-600" />
+                <Shield className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-lg mb-3">Reliability</CardTitle>
               <CardDescription>
@@ -142,7 +146,7 @@ export default function AboutPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Leaf className="w-12 h-12 text-green-600" />
+                <Leaf className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-lg mb-3">Sustainability</CardTitle>
               <CardDescription>
@@ -152,7 +156,7 @@ export default function AboutPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Target className="w-12 h-12 text-red-600" />
+                <Target className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-lg mb-3">Excellence</CardTitle>
               <CardDescription>
@@ -162,7 +166,7 @@ export default function AboutPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Handshake className="w-12 h-12 text-orange-600" />
+                <Handshake className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-lg mb-3">Integrity</CardTitle>
               <CardDescription>
@@ -178,10 +182,10 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#003666] mb-4">
-              Our Journey
+              Our Roadmap
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Key milestones in our company&apos;s growth and evolution
+              Key milestones in our company&apos;s development and launch strategy
             </p>
           </div>
 
@@ -217,7 +221,7 @@ export default function AboutPage() {
               Leadership Team
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals leading Roo Petroleum forward
+              Meet the qualified professionals leading Roo Petroleum forward
             </p>
           </div>
 
@@ -273,7 +277,7 @@ export default function AboutPage() {
 }
 
 export const metadata = {
-  title: 'About Us - Roo Petroleum | Reliable Fuel Solutions Since 1998',
-  description: 'Learn about Roo Petroleum&apos;s 25+ year history, mission, values, and leadership team. Discover why we&apos;re the trusted choice for petroleum solutions.',
-  keywords: ['about roo petroleum', 'company history', 'petroleum industry experience', 'fuel solutions provider', 'energy company leadership']
+  title: 'About Us - Roo Petroleum | Reliable Fuel Solutions Provider',
+  description: 'Learn about Roo Petroleum&apos;s mission, values, and leadership team. Discover why we&apos;re committed to being your trusted choice for petroleum solutions.',
+  keywords: ['about roo petroleum', 'company mission', 'fuel solutions provider', 'energy company leadership', 'petroleum services']
 };

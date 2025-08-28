@@ -140,7 +140,7 @@ export default function StorageSolutionsPage() {
               Why Choose Our Storage Solutions?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the difference with our professional fuel storage systems
+              Discover the benefits of our professional fuel storage systems
             </p>
           </div>
 
@@ -249,7 +249,7 @@ export default function StorageSolutionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center bg-white rounded-lg p-4">
-                <CheckCircle className="w-5 h-5 text-[#F2601A] mr-3" />
+                <CheckCircle className="w-5 h-5 text-[#003666] mr-3" />
                 <span className="text-[#003666] font-medium">{feature}</span>
               </div>
             ))}

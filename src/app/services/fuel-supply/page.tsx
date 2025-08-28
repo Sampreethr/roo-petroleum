@@ -79,7 +79,7 @@ export default function FuelSupplyPage() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center mb-6">
-              <Fuel className="w-12 h-12 mr-4 text-[#F2601A]" />
+              <Fuel className="w-12 h-12 mr-4 text-[#003666]" />
               <h1 className="text-4xl md:text-5xl font-bold">
                 Fuel Supply & Distribution
               </h1>
@@ -110,7 +110,7 @@ export default function FuelSupplyPage() {
               Why Choose Our Fuel Supply Services?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the difference with our professional fuel supply and distribution services
+              Discover the benefits of our professional fuel supply and distribution services
             </p>
           </div>
 
@@ -150,7 +150,7 @@ export default function FuelSupplyPage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2" />
+                        <CheckCircle className="w-4 h-4 text-[#003666] mr-2" />
                         {feature}
                       </li>
                     ))}

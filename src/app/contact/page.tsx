@@ -2,6 +2,7 @@ import Layout from '@/components/layout/Layout';
 import ContactForm from '@/components/shared/ContactForm';
 import Card, { CardHeader, CardTitle, CardContent } from '@/components/shared/Card';
 import { Phone, Mail, AlertTriangle, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ContactPage() {
   const contactMethods = [
@@ -23,35 +24,29 @@ export default function ContactPage() {
       title: 'Emergency',
       icon: <AlertTriangle className="w-6 h-6" />,
       primary: '+61 1800 ROO FUEL',
-      secondary: '24/7 for existing customers',
+      secondary: '24/7 emergency support',
       action: 'tel:+61-1800-766-3835'
     }
   ];
 
-  const offices = [
+  const serviceAreas = [
     {
-      name: 'Head Office',
-      address: '123 Petroleum Drive',
-      city: 'Sydney, NSW 2000',
-      phone: '+61 2 8765 4321',
-      email: 'sydney@roopetroleum.com.au',
-      hours: 'Mon-Fri: 8:00 AM - 6:00 PM AEST'
+      name: 'Metropolitan Areas',
+      coverage: 'Sydney, Melbourne, Brisbane',
+      description: 'Comprehensive fuel supply and distribution services for major metropolitan areas',
+      features: ['24/7 Emergency Support', 'Bulk Delivery', 'Fleet Management']
     },
     {
-      name: 'Regional Office',
-      address: '456 Energy Boulevard',
-      city: 'Melbourne, VIC 3000',
-      phone: '+61 3 9876 5432',
-      email: 'melbourne@roopetroleum.com.au',
-      hours: 'Mon-Fri: 8:00 AM - 5:00 PM AEST'
+      name: 'Regional Centers',
+      coverage: 'Newcastle, Wollongong, Gold Coast',
+      description: 'Reliable fuel solutions for regional business and industrial operations',
+      features: ['Scheduled Delivery', 'Storage Solutions', 'Technical Support']
     },
     {
-      name: 'Distribution Centre',
-      address: '789 Industrial Parkway',
-      city: 'Brisbane, QLD 4000',
-      phone: '+61 7 3456 7890',
-      email: 'brisbane@roopetroleum.com.au',
-      hours: 'Mon-Sat: 7:00 AM - 7:00 PM AEST'
+      name: 'Industrial Zones',
+      coverage: 'Mining, Manufacturing, Agriculture',
+      description: 'Specialized fuel services for industrial and commercial applications',
+      features: ['Custom Solutions', 'Equipment Maintenance', 'Consulting Services']
     }
   ];
 
@@ -62,11 +57,11 @@ export default function ContactPage() {
     },
     {
       question: 'Do you offer emergency fuel delivery?',
-      answer: 'Yes, we provide 24/7 emergency fuel delivery services for existing customers. Contact our emergency hotline for immediate assistance.'
+      answer: 'Yes, we will provide 24/7 emergency fuel delivery services once operations begin. Contact our emergency hotline for immediate assistance.'
     },
     {
       question: 'What areas do you serve?',
-      answer: 'We serve customers across Australia including all major cities and regional areas. Contact us to confirm service availability in your specific location.'
+      answer: 'We plan to serve clients across Australia including all major cities and regional areas. Contact us to confirm planned service availability in your specific location.'
     },
     {
       question: 'How do I request a quote?',
@@ -81,17 +76,31 @@ export default function ContactPage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#003666] to-[#004080] text-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative min-h-[60vh] flex items-center justify-center text-white overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/contact.png"
+            alt="Contact background"
+            fill
+            className="object-cover blur-[1px]"
+            priority
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">
               Contact Us
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
+            <p className="text-xl md:text-2xl mb-8 opacity-90 drop-shadow-md">
               Get in touch with our petroleum experts
             </p>
-            <p className="text-lg opacity-80 max-w-3xl mx-auto">
-              Ready to discuss your fuel needs? Our experienced team is here to provide 
+            <p className="text-lg opacity-80 max-w-3xl mx-auto drop-shadow-md">
+              Ready to discuss your fuel needs? Our dedicated team is here to provide 
               personalized solutions and exceptional service.
             </p>
           </div>
@@ -134,51 +143,40 @@ export default function ContactPage() {
       {/* Contact Form Section */}
       <ContactForm showCompanyInfo={false} />
 
-      {/* Office Locations */}
+      {/* Service Areas */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#003666] mb-4">
-              Our Locations
+              Service Areas
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Visit us at one of our convenient locations across Australia
+              Planned coverage areas for our comprehensive fuel solutions
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {offices.map((office, index) => (
+            {serviceAreas.map((area, index) => (
               <Card key={index} variant="default" padding="lg">
                 <CardHeader>
-                  <CardTitle className="text-xl text-[#003666]">{office.name}</CardTitle>
+                  <CardTitle className="text-xl text-[#003666]">{area.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
-                    <p className="font-semibold text-gray-700">Address:</p>
-                    <p className="text-gray-600">
-                      {office.address}<br />
-                      {office.city}
-                    </p>
+                    <p className="font-semibold text-gray-700">Coverage:</p>
+                    <p className="text-gray-600">{area.coverage}</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-700">Phone:</p>
-                    <p className="text-gray-600">
-                      <a href={`tel:${office.phone}`} className="hover:text-[#F2601A]">
-                        {office.phone}
-                      </a>
-                    </p>
+                    <p className="font-semibold text-gray-700">Description:</p>
+                    <p className="text-gray-600">{area.description}</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-700">Email:</p>
-                    <p className="text-gray-600">
-                      <a href={`mailto:${office.email}`} className="hover:text-[#F2601A]">
-                        {office.email}
-                      </a>
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-700">Hours:</p>
-                    <p className="text-gray-600">{office.hours}</p>
+                    <p className="font-semibold text-gray-700">Key Features:</p>
+                    <ul className="text-gray-600 list-disc list-inside space-y-1">
+                      {area.features.map((feature, featureIndex) => (
+                        <li key={featureIndex}>{feature}</li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
@@ -214,7 +212,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section Placeholder */}
+      {/* Map Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -222,23 +220,36 @@ export default function ContactPage() {
               Find Us
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Locate our offices and service areas
+              Visit our Melbourne office in Truganina
             </p>
           </div>
 
-          <Card variant="elevated" padding="none" className="max-w-4xl mx-auto">
-            <div className="h-96 bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mb-4 flex justify-center">
-                  <MapPin className="w-16 h-16 text-gray-400" />
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Address Card */}
+            <Card variant="elevated" padding="lg" className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <MapPin className="w-8 h-8 text-[#003666] mr-3" />
+                <div>
+                  <h3 className="text-xl font-semibold text-[#003666]">Melbourne Office</h3>
+                  <p className="text-gray-600">Unit 41/2 Fastline Rd, Truganina VIC 3029</p>
                 </div>
-                <p className="text-gray-600">
-                  Interactive map coming soon<br />
-                  <span className="text-sm">Contact us for directions to our locations</span>
-                </p>
               </div>
-            </div>
-          </Card>
+            </Card>
+
+            {/* Google Maps Embed */}
+            <Card variant="elevated" padding="none" className="overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.73532!3d-37.8136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65bb7e3f5c5c5%3A0x5045675218ce6e0!2sUnit%2041%2F2%20Fastline%20Rd%2C%20Truganina%20VIC%203029%2C%20Australia!5e0!3m2!1sen!2sau!4v1703123456789!5m2!1sen!2sau"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Roo Petroleum Melbourne Office Location"
+              ></iframe>
+            </Card>
+          </div>
         </div>
       </section>
 

@@ -15,7 +15,7 @@ export default function MaintenancePage() {
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Certified Technicians",
-      description: "Highly trained and certified technicians with extensive petroleum equipment experience."
+      description: "Highly trained and certified technicians specializing in petroleum equipment."
     },
     {
       icon: <Calendar className="w-6 h-6" />,
@@ -199,7 +199,7 @@ export default function MaintenancePage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2" />
+                        <CheckCircle className="w-5 h-5 text-[#003666] mr-3" />
                         {feature}
                       </li>
                     ))}
@@ -334,7 +334,7 @@ export default function MaintenancePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-[#F2601A] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
+                <Wrench className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-[#003666] mb-3">Assessment</h3>
               <p className="text-gray-600">

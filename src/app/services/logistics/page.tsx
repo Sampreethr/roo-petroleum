@@ -138,7 +138,7 @@ export default function LogisticsPage() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center mb-6">
-              <Truck className="w-12 h-12 mr-4 text-[#F2601A]" />
+              <Truck className="w-12 h-12 mr-4 text-[#003666]" />
               <h1 className="text-4xl md:text-5xl font-bold">
                 Logistics & Transportation
               </h1>
@@ -169,14 +169,14 @@ export default function LogisticsPage() {
               Why Choose Our Logistics Services?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the difference with our professional transportation and logistics solutions
+              Discover the benefits of our professional transportation and logistics solutions
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <Card key={index} variant="default" padding="lg" className="text-center h-full">
-                <div className="text-[#F2601A] mb-4 flex justify-center">{benefit.icon}</div>
+                <div className="text-[#003666] mb-4 flex justify-center">{benefit.icon}</div>
                 <CardTitle className="text-xl mb-3">{benefit.title}</CardTitle>
                 <CardDescription>{benefit.description}</CardDescription>
               </Card>
@@ -212,7 +212,7 @@ export default function LogisticsPage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2" />
+                        <CheckCircle className="w-4 h-4 text-[#003666] mr-2" />
                         {feature}
                       </li>
                     ))}
@@ -241,7 +241,7 @@ export default function LogisticsPage() {
               <Card key={index} variant="default" padding="lg" className="h-full">
                 <CardHeader>
                   <div className="text-center mb-4">
-                    <Truck className="w-12 h-12 text-[#F2601A] mx-auto mb-2" />
+                    <Truck className="w-12 h-12 text-[#003666] mx-auto mb-2" />
                     <CardTitle className="text-lg text-[#003666]">{fleet.vehicle}</CardTitle>
                   </div>
                   <div className="text-center">
@@ -280,7 +280,7 @@ export default function LogisticsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {safetyFeatures.map((feature, index) => (
               <div key={index} className="flex items-center bg-white rounded-lg p-4">
-                <Shield className="w-5 h-5 text-[#F2601A] mr-3" />
+                <Shield className="w-5 h-5 text-[#003666] mr-3" />
                 <span className="text-[#003666] font-medium">{feature}</span>
               </div>
             ))}
@@ -303,7 +303,7 @@ export default function LogisticsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coverageAreas.map((area, index) => (
               <Card key={index} variant="default" padding="lg" className="text-center h-full">
-                <div className="text-[#F2601A] mb-4 flex justify-center">
+                <div className="text-[#003666] mb-4 flex justify-center">
                   <MapPin className="w-8 h-8" />
                 </div>
                 <CardTitle className="text-xl mb-3 text-[#003666]">{area.region}</CardTitle>

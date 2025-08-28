@@ -36,7 +36,7 @@ const defaultServices: Service[] = [
       'Fleet management solutions',
       'Competitive pricing'
     ],
-    icon: <Fuel className="w-8 h-8 text-blue-600" />
+    icon: <Fuel className="w-8 h-8 text-[#003666]" />
   },
   {
     id: 'storage-solutions',
@@ -48,7 +48,7 @@ const defaultServices: Service[] = [
       'Safety compliance',
       'Environmental monitoring'
     ],
-    icon: <Factory className="w-8 h-8 text-blue-600" />
+    icon: <Factory className="w-8 h-8 text-[#003666]" />
   },
   {
     id: 'consulting',
@@ -60,7 +60,7 @@ const defaultServices: Service[] = [
       'Sustainability planning',
       'Regulatory compliance'
     ],
-    icon: <BarChart3 className="w-8 h-8 text-blue-600" />
+    icon: <BarChart3 className="w-8 h-8 text-[#003666]" />
   },
   {
     id: 'maintenance',
@@ -72,7 +72,7 @@ const defaultServices: Service[] = [
       'Equipment upgrades',
       'Technical support'
     ],
-    icon: <Wrench className="w-8 h-8 text-blue-600" />
+    icon: <Wrench className="w-8 h-8 text-[#003666]" />
   }
 ];
 
@@ -123,10 +123,10 @@ const Services: React.FC<ServicesProps> = ({
               </CardHeader>
               
               <CardContent>
-                <ul className="space-y-2">
+                <ul className="space-y-2 hidden md:block">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-start text-sm text-gray-600">
-                      <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#003666] mr-2 mt-1 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -180,10 +180,10 @@ export const ServiceCard: React.FC<{ service: Service; className?: string }> = (
     </CardHeader>
     
     <CardContent>
-      <ul className="space-y-2">
+      <ul className="space-y-2 hidden md:block">
         {service.features.map((feature, index) => (
           <li key={index} className="flex items-start text-sm text-gray-600">
-            <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2 mt-1 flex-shrink-0" />
+            <CheckCircle className="w-4 h-4 text-[#003666] mr-2 mt-1 flex-shrink-0" />
             {feature}
           </li>
         ))}

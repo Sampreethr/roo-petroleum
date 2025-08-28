@@ -121,7 +121,7 @@ export default function ConsultingPage() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center mb-6">
-              <BarChart3 className="w-12 h-12 mr-4 text-[#F2601A]" />
+              <BarChart3 className="w-12 h-12 mr-4 text-[#003666]" />
               <h1 className="text-4xl md:text-5xl font-bold">
                 Energy Consulting
               </h1>
@@ -130,7 +130,7 @@ export default function ConsultingPage() {
               Expert consulting services to optimize energy consumption and reduce costs
             </p>
             <p className="text-lg opacity-80 max-w-3xl">
-              Our experienced energy consultants help businesses across Australia develop strategic energy management plans, reduce operational costs, and achieve sustainability goals while ensuring regulatory compliance.
+              Our qualified energy consultants help businesses across Australia develop strategic energy management plans, reduce operational costs, and achieve sustainability goals while ensuring regulatory compliance.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-[#F2601A] hover:bg-[#E5551A] text-white">
@@ -159,7 +159,7 @@ export default function ConsultingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <Card key={index} variant="default" padding="lg" className="text-center h-full">
-                <div className="text-[#F2601A] mb-4 flex justify-center">{benefit.icon}</div>
+                <div className="text-[#003666] mb-4 flex justify-center">{benefit.icon}</div>
                 <CardTitle className="text-xl mb-3">{benefit.title}</CardTitle>
                 <CardDescription>{benefit.description}</CardDescription>
               </Card>
@@ -195,7 +195,7 @@ export default function ConsultingPage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#F2601A] mr-2" />
+                        <CheckCircle className="w-4 h-4 text-[#003666] mr-2" />
                         {feature}
                       </li>
                     ))}

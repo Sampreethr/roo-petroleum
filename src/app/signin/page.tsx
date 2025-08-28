@@ -118,7 +118,7 @@ export default function SignInPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <BarChart3 className="w-12 h-12 text-blue-600" />
+                <BarChart3 className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-xl mb-3">Order Management</CardTitle>
               <CardDescription>
@@ -128,7 +128,7 @@ export default function SignInPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <CreditCard className="w-12 h-12 text-blue-600" />
+                <CreditCard className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-xl mb-3">Billing & Invoices</CardTitle>
               <CardDescription>
@@ -138,7 +138,7 @@ export default function SignInPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Smartphone className="w-12 h-12 text-blue-600" />
+                <Smartphone className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-xl mb-3">Mobile Access</CardTitle>
               <CardDescription>
@@ -148,7 +148,7 @@ export default function SignInPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <TrendingUp className="w-12 h-12 text-blue-600" />
+                <TrendingUp className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-xl mb-3">Usage Analytics</CardTitle>
               <CardDescription>
@@ -158,7 +158,7 @@ export default function SignInPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Bell className="w-12 h-12 text-blue-600" />
+                <Bell className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-xl mb-3">Notifications</CardTitle>
               <CardDescription>
@@ -168,7 +168,7 @@ export default function SignInPage() {
 
             <Card variant="default" padding="lg" className="text-center">
               <div className="mb-4 flex justify-center">
-                <Target className="w-12 h-12 text-blue-600" />
+                <Target className="w-12 h-12 text-[#003666]" />
               </div>
               <CardTitle className="text-xl mb-3">Priority Support</CardTitle>
               <CardDescription>
@@ -189,7 +189,7 @@ export default function SignInPage() {
                   New Customer?
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Join thousands of satisfied customers who trust Roo Petroleum for their fuel needs. 
+                  Be among the first to experience Roo Petroleum's innovative fuel solutions. 
                   Setting up your account is quick and easy.
                 </p>
                 <ul className="space-y-3 mb-8">

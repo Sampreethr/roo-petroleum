@@ -3,17 +3,35 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { HeaderProps } from '@/types';
 import { LAYOUT } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import Button from '@/components/shared/Button';
+import { Home, User, Briefcase, Phone } from 'lucide-react';
 
 /**
  * Header component with navigation and branding
  * Features responsive design and smooth scrolling effects
  */
-const Header: React.FC<HeaderProps> = ({ navigation, showSignIn = true }) => {
+const Header: React.FC<HeaderProps> = ({ navigation }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Icon mapping for navigation items
+  const getNavigationIcon = (label: string) => {
+    switch (label.toLowerCase()) {
+      case 'home':
+        return <Home className="w-5 h-5" />;
+      case 'about':
+        return <User className="w-5 h-5" />;
+      case 'services':
+        return <Briefcase className="w-5 h-5" />;
+      case 'contact':
+        return <Phone className="w-5 h-5" />;
+      default:
+        return null;
+    }
+  };
 
 
 
@@ -54,43 +72,41 @@ const Header: React.FC<HeaderProps> = ({ navigation, showSignIn = true }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 z-10">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'text-sm font-semibold transition-all duration-200 relative',
-                  'text-white hover:text-[#F2601A] hover:scale-105 drop-shadow-md',
-                  'after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5',
-                  'after:bg-[#F2601A] after:transition-all after:duration-200',
-                  'hover:after:w-full'
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className="hidden lg:flex items-center space-x-12 z-10">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    'flex items-center space-x-3 text-base font-semibold transition-all duration-200 relative group',
+                    'drop-shadow-md hover:scale-105',
+                    isActive
+                      ? 'text-[#F2601A] scale-105'
+                      : 'text-white hover:text-[#F2601A]',
+                    'after:absolute after:bottom-0 after:left-0 after:h-0.5',
+                    'after:bg-[#F2601A] after:transition-all after:duration-200',
+                    isActive
+                      ? 'after:w-full'
+                      : 'after:w-0 hover:after:w-full'
+                  )}
+                >
+                  <span className={cn(
+                    'transition-all duration-200',
+                    isActive ? 'text-[#F2601A]' : 'group-hover:rotate-12'
+                  )}>
+                    {getNavigationIcon(item.label)}
+                  </span>
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* Desktop Actions */}
+          {/* Desktop Actions - Removed sign-in functionality */}
           <div className="hidden lg:flex items-center space-x-4 z-10">
-            {showSignIn && (
-              <>
-                <Link
-                  href="/signin"
-                  className="text-sm font-semibold transition-all duration-200 text-white hover:text-[#F2601A] hover:scale-105 drop-shadow-md"
-                >
-                  Sign In
-                </Link>
-                <Button 
-                  variant="primary" 
-                  size="sm"
-                  className="shadow-lg hover:shadow-xl transition-shadow duration-200"
-                >
-                  Get Started
-                </Button>
-              </>
-            )}
+            {/* Sign-in functionality removed as requested */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -133,30 +149,34 @@ const Header: React.FC<HeaderProps> = ({ navigation, showSignIn = true }) => {
         )}
       >
         <div className="px-4 py-6 space-y-4">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block text-white font-medium py-2 border-b border-[#002244] last:border-b-0 hover:text-[#F2601A] transition-colors duration-200"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          {showSignIn && (
-            <div className="pt-4 space-y-3">
+          {navigation.map((item) => {
+            const isActive = pathname === item.href;
+            return (
               <Link
-                href="/signin"
-                className="block text-white font-medium py-2 hover:text-[#F2601A] transition-colors duration-200"
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  'flex items-center space-x-3 font-medium py-2 border-b border-[#002244] last:border-b-0 transition-all duration-200 relative',
+                  isActive
+                    ? 'text-[#F2601A] bg-[#F2601A]/10 px-3 rounded-lg border-[#F2601A]/30'
+                    : 'text-white hover:text-[#F2601A] hover:bg-white/5 hover:px-3 hover:rounded-lg'
+                )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sign In
+                <span className={cn(
+                  'transition-all duration-200',
+                  isActive ? 'text-[#F2601A]' : ''
+                )}>
+                  {getNavigationIcon(item.label)}
+                </span>
+                <span>{item.label}</span>
+                {isActive && (
+                  <div className="absolute right-2 w-2 h-2 bg-[#F2601A] rounded-full" />
+                )}
               </Link>
-              <Button variant="primary" size="md" className="w-full">
-                Get Started
-              </Button>
-            </div>
-          )}
+            );
+          })}
+          {/* Sign-in functionality removed as requested */}
         </div>
       </div>
     </header>

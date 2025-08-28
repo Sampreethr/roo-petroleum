@@ -25,15 +25,15 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
     tagline: 'Fueling Your Journey with Reliability and Care',
     description: 'Your trusted partner for quality petroleum products and exceptional service.',
     address: {
-      street: '123 Energy Boulevard',
-      city: 'Sydney',
-      state: 'NSW',
-      zipCode: '2000',
+      street: 'Unit 41/2 Fastline Rd',
+      city: 'Truganina',
+      state: 'VIC',
+      zipCode: '3029',
       country: 'Australia',
     },
     contact: {
-      phone: '+61 2 8765 4321',
-      email: 'office@roopetroleum.com.au',
+      phone: '+61 3 9876 5432',
+      email: 'melbourne@roopetroleum.com.au',
       website: 'https://roopetroleum.com.au',
     },
   };
@@ -60,7 +60,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <Header navigation={navigationItems} showSignIn={true} />
+      <Header navigation={navigationItems} />
       
       {/* Main Content */}
       <main 
